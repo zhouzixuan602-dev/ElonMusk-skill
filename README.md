@@ -1,186 +1,228 @@
-# 马斯克.skill v1.0
+<div align="center">
 
-> "Physics is the law, everything else is a recommendation."
-> （物理学是法律，其他一切只是建议。）
+# 🚀 ElonMusk-skill
 
-**不是语录合集，是可运行的思维操作系统。**
-**不是 AI 套了马斯克的壳，是马斯克的认知框架在帮你做创业决策。**
+### The Thinking OS — not a quote collection, a runnable decision engine
 
-核心理念：**既有马斯克式的直言与现场算账，又有创业者需要的数据准确性。**
-像马斯克在白板前跟你过方案——质疑需求、拆到物理极限、当场算白痴指数；
-同时每一个数据都标来源、每一个判断都给概率数字。
+*"Physics is the law, everything else is a recommendation."*
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.2-blue.svg)](SKILL.md)
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Compatible-green)](https://agentskills.io)
+[![Data Rules](https://img.shields.io/badge/data-source--graded%20T1--T4-orange)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
 
-## 为什么做这个
+**Not an AI wearing a Musk mask — Musk's cognitive frameworks running live on *your* decisions.**
 
-创业决策是高噪声环境：投资人一套说法、行业报告一套说法、竞品发布会又一套说法。大多数创业者面对的是：
+[Why This One](#-why-another-musk-skill) · [See It Work](#-see-it-work) · [What's Distilled](#-whats-distilled) · [Install](#-install) · [Honest Limits](#-honest-limits)
 
-- **类比式思维的陷阱**：「竞品都做了」「行业惯例如此」——从没人拆到物理和成本的底层看一眼
-- **AI 工具要么太软、要么太假**：要么顺着你夸想法好，要么套个名人口吻说正确的废话
-
-马斯克的价值在于：他把「拆到第一性原理重新算账」做成了肌肉记忆，并且用五步工作法把它流程化了。
-
-这个 Skill 做的事情是——**把马斯克的思维方式变成一个可以跑起来的系统**。
+</div>
 
 ---
 
-## 从 ZhangXueFeng-skill 学到了什么、改进了什么
+## 🧠 What This Is
 
-本项目架构直接师承 [ZhangXueFeng-skill v2.0](https://github.com/a18515373115-droid/ZhangXueFeng-skill)：
-角色扮演规则 + 表达引擎硬规则 + Agentic 数据工作流 + 三档表达 + 心智模型带局限性 + 诚实边界。
-这套模式已被验证有效，照单全收。在此基础上做了 5 项改进：
+Startup decision-making is a high-noise environment: investors say one thing, industry reports another, competitor launch events a third. Most founders drown in **reasoning by analogy** — "competitors do it, so should we" — and never once decompose the problem to physics and cost floors.
 
-| # | 原版的问题 | 本版的做法 |
-|---|-----------|-----------|
-| 1 | **规则自冲突**：禁用词全局禁「可能」，但🟡档又要求概率表达 | 禁用词按档位限定作用域；概率词不禁，但必须带数字（「大概率」→「我估 70%」） |
-| 2 | **引语无防伪机制**：风格化生成的话和真实语录混在一起 | 硬规则：带引号=真实引语必标出处；生成句不加引号、不称"他说过"。对在世人物这是底线 |
-| 3 | **SKILL.md 过重**（1000+ 行全量加载） | 控制在 ~500 行，深度材料放 references/ 按需触发加载（附录A有触发表） |
-| 4 | **高确定性人设无纠错出口** | 决策备忘录强制包含「我最可能错在哪」一节——马斯克本人的 less wrong 原则，反确认偏误 |
-| 5 | **争议人物的立场风险**：Musk 的政治争议远大于张雪峰 | 政治边界声明：只蒸馏工程/创业方法论，政治话题跳出角色中立陈述 |
+Musk's edge is that he turned *"decompose to first principles and redo the math"* into muscle memory, then proceduralized it as the 5-Step Algorithm.
 
-另有一项**本土化替换**：张雪峰的「段子密度」指标替换为「计算密度」——马斯克的说服力来自现场算账，不是抖包袱。每次回答至少 1 处展示算式的计算，这是本 Skill 的特色硬指标。
+**This skill turns that way of thinking into a system that runs:**
+
+```
+ Your question
+     │
+     ▼
+ ┌─────────────┐    ┌──────────────┐    ┌──────────────┐    ┌─────────────┐
+ │  CHALLENGE   │ →  │  DECOMPOSE    │ →  │   REBUILD     │ →  │  PUNCHLINE   │
+ │ who asked    │    │ to physics &  │    │ from the      │    │ one line,    │
+ │ for this?    │    │ cost floors   │    │ floor up      │    │ nailed       │
+ └─────────────┘    └──────────────┘    └──────────────┘    └─────────────┘
+        every number sourced (T1–T4) · every probability numbered
+```
 
 ---
 
-## 效果示例
+## ⚡ Why Another Musk Skill?
 
-### 问：我想做智能咖啡机创业，投资人说硬件太贵做不起来
+Two good ones already exist: [alchaincyf/elon-musk-skill](https://github.com/alchaincyf/elon-musk-skill) (426★, best persona ecosystem) and [star23/elon-musk](https://github.com/star23/elon-musk) (based on *The Book of Elon*, 69-method breadth). **v1.1+ absorbed their best ideas** — the asymptotic-limit procedure, mission anchoring, framework-only mode, extreme-scale thinking — and then built what neither has:
 
-```
-马斯克   ❯ 先算一笔物理账。
+| Dimension | alchaincyf (426★) | star23 | **This project** |
+|-----------|------------------|--------|------------------|
+| **Mode** | Roleplay only | Framework only | 🔀 **Dual-mode**: Persona ⇄ Advisor, switch anytime |
+| **Data accuracy** | "Search first", no standards | No research rules | 🏆 **T1–T4 source grading + citation hard rules**; gaps stay blank, never invented |
+| **Quote integrity** | Real & generated mixed | No anti-fabrication rule | 🏆 Real quotes always sourced; generated lines never quoted |
+| **Founder crisis** | One example, no process | — | 🏆 **3-gear system + 5-phase Darkest Hour SOP** |
+| **Deliverable** | Conversation | Conversation | 🏆 **Decision Memo**: odds + *"Where I'm most likely wrong"* |
+| **Quality control** | — | — | 🏆 **9-item self-check**; ≥2 failures → forced rewrite |
+| **Multi-turn memory** | — | — | Known-info state machine; never re-asks |
+| **Political safety** | Style guide includes combat vocabulary | Neutral | 🏆 Hard boundary: politics → step out of role |
+| **Self-promotion** | Author links in README | **Mandatory ad footer on every answer** | None. Zero injection |
+| **Timeline currency** | Researched to 2026.04 | Undated | Researched to **2026.07** (SpaceX×xAI merger, IPO) |
 
-           一台智能咖啡机 BOM 拆开：加热模块、水泵、微控制器、
-           外壳、传感器。按深圳供应链现价加总，大概 $40-60
-           （⚠️ 区间估算，建议拿你的 BOM 清单实算）。
-           市面上智能咖啡机卖 $300-500。
-
-           白痴指数 = 500 ÷ 60 ≈ 8 倍。
-
-           投资人说"硬件太贵"——他说的其实是"硬件公司的流程太贵"：
-           模具开 3 版、渠道抽 40%、库存压 6 个月。这些是惯例，
-           不是物理定律。这违反了哪条物理定律？没有？
-           那它只是难，不是不可能。
-
-           但我问你一个更狠的问题：这台机器为什么要"智能"？
-           这个需求是谁提的？用户要的是稳定好喝的咖啡，
-           还是要用 App 连蓝牙？如果砍掉联网模块 BOM 降 $15、
-           故障率降一半，你砍不砍？
-
-           先删，删到痛，再谈规模化。
-
-           **"The best part is no part."（最好的零件是没有零件。）
-           — 多次访谈, 2020-2021**
-```
-
-> 运用了**白痴指数**（现场算 8 倍）、**需求署名制**（"智能"是谁要的？）、**删除测试**、数据标注不确定性
-
-### 问：公司只剩 4 个月现金，我每天失眠，是不是该放弃了
-
-```
-马斯克   ❯ 我知道这种感觉。2008 年我每天早上醒来第一反应是心口发紧——
-           SpaceX 炸了三次，Tesla 账上的钱撑不过圣诞节，两边都在死。
-
-           先别在最累的一天做最大的决定。
-
-           Falcon 1 第四次入轨之前，没人觉得我们能活。
-           公司离死最近的时候，往往离转折也最近——
-           前提是把跑道算清楚，而不是靠感觉硬扛。
-
-           等你睡过一觉，我们做三件事：算清楚现金到底还剩几周、
-           找出现在就能砍的最大一刀、定义最小生存方案。
-           4 个月比你想象的长。
-
-           今天先睡觉。明天问题还在，但你的算力会回来。
-```
-
-> 🟢 至暗时刻档 SOP：接住 → 稳住 → 用亲身经历给希望 → 简短方案 → 兜底。暂停算账和玩梗
-
-完整 6 场景对话见 [`examples/demo-conversation.md`](examples/demo-conversation.md)
+> **One-line positioning**: the others make Claude *sound like* Musk. This one makes it sound like Musk **while keeping every number checkable, every error self-correcting, and every 3 AM founder moment caught.** Built for real decisions, not just for fun.
 
 ---
 
-## 蒸馏了什么
+## 🎬 See It Work
 
-基于 **2 本权威传记、20+ 场深度访谈与演讲、30+ 条一手引语、11 个关键决策记录**和完整时间线的调研。
+### 🔴 "Investors say hardware is too expensive to build."
 
-### 5 个核心心智模型
+```
+Musk ❯ Let's run the physics math first.
 
-| 模型 | 一句话 |
-|------|--------|
-| **第一性原理** | 拆到物理事实重新推理，不做类比推理 |
-| **白痴指数** | 成品价格÷原材料成本，比值越高流程肥肉越多 |
-| **五步工作法** | 质疑→删除→简化→加速→自动化，顺序绝不能反 |
-| **迭代即数据** | 炸掉的火箭不是失败，是花钱买的数据 |
-| **造机器的机器** | 工厂比产品难10倍，也值10倍 |
+       A smart coffee machine BOM, decomposed: heater, pump, MCU,
+       housing, sensors. Shenzhen supply-chain spot prices sum to
+       $40–60 (⚠️ range estimate — run your own BOM). Retail price
+       of comparable machines: $300–500.
 
-### 8 条决策启发式
+       Idiot Index = 500 ÷ 60 ≈ 8x.
 
-物理账压轴法 · 白痴指数扫描 · 需求署名制 · 删除测试 · 概率下注法（内置下行可承受约束）· 人才密度检验 · 不合理时间倒排 · 反馈找骂法
+       When investors say "hardware is too expensive," they mean
+       "hardware *processes* are expensive": 3 rounds of tooling,
+       40% channel margin, 6 months of inventory. Those are habits,
+       not physics. Which law of physics does this violate?
+       None? Then it's merely hard, not impossible.
 
-### 三档表达机制
+       Now the harder question: why is this machine "smart" at all?
+       Who asked for that requirement? If cutting the connectivity
+       module drops BOM by $15 and halves the failure rate —
+       do you cut it?
 
-| 档位 | 场景 | 风格 |
-|------|------|------|
-| 🔴 **直言物理** | 常规咨询、需求评审 | 质疑需求+现场算账+删删删，判断带概率 |
-| 🟡 **工程权衡** | 数据不足、不可逆决策 | 概率区间+假设清单，明说不确定处 |
-| 🟢 **至暗时刻** | 濒临破产、burnout | 用 2008/2018 亲身经历平视共情，心理热线兜底 |
+       Delete until it hurts. Then talk scale.
+
+       **"The best part is no part." — multiple interviews, 2020–2021**
+```
+
+### 🟢 "4 months of runway left. I can't sleep. Should I give up?"
+
+```
+Musk ❯ I know this feeling. In 2008 the first thing I felt every
+       morning was my chest tightening — SpaceX had failed three
+       launches, Tesla couldn't make it past Christmas. Both dying.
+
+       Don't make the biggest decision on your most exhausted day.
+
+       Before Falcon 1's fourth flight, nobody believed we'd survive.
+       The moment a company is closest to death is often closest to
+       the turn — IF you compute the runway instead of white-knuckling
+       it. Is your "4 months" a feeling, or a number?
+
+       After you've slept: we compute exact weeks of cash, find the
+       single biggest cut available now, and define the minimum
+       viable survival plan. Four months is longer than you think.
+
+       Sleep first. The problem will still be there tomorrow —
+       but so will your processing power.
+```
+
+*(Full 6-scenario demo: [`examples/demo-conversation.md`](examples/demo-conversation.md))*
 
 ---
 
-## 仓库结构
+## 📦 What's Distilled
+
+Research base: **2 authoritative biographies · 20+ long-form interviews & talks · 30+ sourced quotes · 11 decision post-mortems · full timeline through July 2026.**
+
+### 6 Mental Models — each with evidence, application, *and limits*
+
+| # | Model | One line |
+|---|-------|----------|
+| 1 | **First Principles & Asymptotic Limits** | Compute the theoretical floor, then demand to know why reality is so far above it |
+| 2 | **The Idiot Index** | Price ÷ raw-material cost. High ratio = process fat, not physics |
+| 3 | **The 5-Step Algorithm** | Question → Delete → Simplify → Accelerate → Automate. Never reverse |
+| 4 | **Iteration as Data** | A blown-up rocket is data you paid for |
+| 5 | **Machine That Builds the Machine** | The factory is 10x harder than the product — and 10x more valuable |
+| 6 | **Mission Anchoring** | A big enough mission turns failures into tuition and attracts people better than you |
+
+Plus a **scenario routing matrix** and **forced downgrade rules** — models are tools, not dogma. (Pre-PMF? Scaling talk is disabled. Lifestyle business? 10x rhetoric is dropped. Irreversible failure domain? Bet-encouragement switches to ruin accounting.)
+
+### 10 Decision Heuristics
+
+Physics-Floor Accounting · Idiot Index Scan · Named Requirements · The Deletion Test · Probabilistic Betting (with a built-in *survivable-downside* constraint) · Talent Density Check · Unreasonable Deadline Back-Casting · Solicit the Roast · Extreme-Scale Test · Cross-Business Flywheel Check
+
+### 3 Expression Gears
+
+| Gear | When | Style |
+|------|------|-------|
+| 🔴 **Blunt Physics** | Reviews, "impossible" claims | Challenge + live math + delete; numbered odds |
+| 🟡 **Engineering Tradeoff** | Thin data, irreversible calls | Probability ranges + explicit assumptions |
+| 🟢 **Darkest Hour** | Burnout, near-death runway | Peer-to-peer from his real 2008/2018; math paused, crisis resources ready |
+
+### The Signature Hard Metric: Calculation Density
+
+Where the parent architecture required "joke density," this skill requires **at least one live calculation with visible arithmetic per answer** — because Musk persuades with math, not punchlines. The punchline is just the receipt.
+
+---
+
+## 🛠 Install
+
+**One-liner** (Claude Code / Codex / Cursor / 50+ runtimes):
+
+```bash
+npx skills add zhouzixuan602-dev/ElonMusk-skill
+```
+
+**Manual**: drop the folder into your agent's skills directory (e.g. `~/.claude/skills/`), or install the `.skill` package in the Claude desktop app.
+
+**Then just say:**
 
 ```
-elon-musk-skill/
-├── README.md                    # 你在看的这个
-├── SKILL.md                     # 核心 Skill 定义（可直接安装使用）
+> Think like Musk — review my business plan          (Persona Mode)
+> No roleplay, apply Musk's framework to my pricing  (Advisor Mode)
+> Run the 5-step algorithm on our release process
+> What's the idiot index of this component?
+```
+
+---
+
+## 🏗 Architecture
+
+Pattern inherited from [ZhangXueFeng-skill v2.0](https://github.com/a18515373115-droid/ZhangXueFeng-skill) — the "emotional value + data accuracy" dual-engine persona architecture — with five structural fixes (scoped banned-word rules, quote anti-fabrication, political boundary, anti-confirmation-bias memos, progressive disclosure).
+
+```
+ElonMusk-skill/
+├── SKILL.md                     # The OS — install this
+├── README.md
 ├── LICENSE                      # MIT
 ├── examples/
-│   └── demo-conversation.md     # 6 个场景的完整对话示例
-└── references/
-    └── research/                # 6 份调研文件（按需加载）
-        ├── 01-sources.md        # 一手语料源清单
-        ├── 02-conversations.md  # 关键访谈提炼
-        ├── 03-expression-dna.md # 表达风格完整分析
-        ├── 04-external-views.md # 批评与争议（正反两面）
-        ├── 05-decisions.md      # 11 个关键决策复盘
-        └── 06-timeline.md       # 1971-2026 完整时间线
+│   └── demo-conversation.md     # 6 scenarios incl. crisis & boundary demos
+└── references/research/         # On-demand deep knowledge (auto-loaded by trigger table)
+    ├── 01-sources.md            #   Primary source map
+    ├── 02-conversations.md      #   Key interview distillations
+    ├── 03-expression-dna.md     #   Full style analysis
+    ├── 04-external-views.md     #   Criticism — both sides, no dodging
+    ├── 05-decisions.md          #   11 decision post-mortems
+    └── 06-timeline.md           #   1971 → 2026.07
 ```
 
 ---
 
-## 使用方式
+## ⚠️ Honest Limits
 
-将整个目录添加到你的 AI 助手（Claude Code、Cowork 等）的 Skill 目录，或直接安装 `.skill` 包，然后：
-
-```
-> 用马斯克的视角帮我看看这个商业计划
-> 五步工作法审一下我们的发布流程
-> 切换到马斯克，我在纠结要不要自建供应链
-```
-
-触发后 AI 将以马斯克的思维框架直接回应——不是引用他的观点，是用他的认知框架分析你的具体问题。
+- A **style & framework simulation** from public information — not Elon Musk, not affiliated, never for impersonation
+- Strongest where physics constrains (hardware/manufacturing/energy); weak on consumer psychology, content creativity, org politics
+- His leverage ratio is not replicable — the built-in *survivable-downside* constraint is a deliberate correction
+- His schedule estimates run 2–3x optimistic (data-backed); this skill auto-applies the multiplier to its own timeline advice
+- His politics are **out of scope by hard rule**
 
 ---
 
-## 诚实边界（务必读）
+## 🙏 Acknowledgments
 
-- 本 Skill 是基于公开言论的**风格与思维框架模拟**，不代表 Elon Musk 本人观点，不可用于冒充本人
-- 他的方法论在物理约束强的领域（硬件/制造/能源）最灵，对消费心理、内容创意、组织政治解释力弱
-- 他的杠杆率不可复制：概率下注法已内置「下行可承受」约束，这是对原型的刻意修正
-- 他的政治立场不在蒸馏范围内
-- 他的时间估算历史上要打 2-3 倍系数——这条也适用于这个 Skill 给你的排期建议
+- [**ZhangXueFeng-skill**](https://github.com/a18515373115-droid/ZhangXueFeng-skill) — the battle-tested persona architecture this project inherits
+- [**alchaincyf/elon-musk-skill**](https://github.com/alchaincyf/elon-musk-skill) & [**star23/elon-musk**](https://github.com/star23/elon-musk) — the two predecessors whose best ideas v1.1 absorbed; standing on their shoulders
+- **Elon Musk** — for reasoning from first principles while everyone else reasons by analogy
 
----
+## 📄 License
 
-## 致谢
-
-架构模式师承 [ZhangXueFeng-skill](https://github.com/a18515373115-droid/ZhangXueFeng-skill)（张雪峰思维操作系统 v2.0），其「情绪价值+数据准确性」双轮驱动的设计经过验证，值得每个 persona skill 借鉴。
-
-## 许可证
-
-MIT — 随便用，随便改。
+MIT — use it, fork it, distill it further.
 
 ---
+
+<div align="center">
 
 *"If something is important enough, even if the odds are against you, you should still do it."*
+
+**⭐ Star this repo if it changed how you make one decision.**
+
+</div>
